@@ -1,0 +1,83 @@
+{
+  "name": "n8n-nodes-customerio",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Customer.io providing 13 resources and 60+ operations for customer data management, messaging automation, transactional emails, broadcasts, and CDP functionality.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-customerio.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-customerio#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-customerio/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "customer.io",
+    "customerio",
+    "email",
+    "marketing",
+    "automation",
+    "transactional",
+    "messaging",
+    "push",
+    "sms",
+    "cdp",
+    "customer-data-platform"
+  ],
+  "main": "dist/nodes/CustomerIo/CustomerIo.node.js",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/CustomerIoApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/CustomerIo/CustomerIo.node.js",
+      "dist/nodes/CustomerIo/CustomerIoTrigger.node.js"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && npm run copy:icons",
+    "copy:icons": "cp nodes/CustomerIo/*.svg dist/nodes/CustomerIo/ 2>/dev/null || true",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.16",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

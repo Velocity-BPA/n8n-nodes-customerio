@@ -1,0 +1,28 @@
+# Source files (only dist is published)
+credentials/
+nodes/
+test/
+scripts/
+
+# Config files
+.eslintrc.js
+.prettierrc
+tsconfig.json
+jest.config.js
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+
+# Development
+*.log
+coverage/
+.nyc_output/
+
+# OS
+.DS_Store
+Thumbs.db
